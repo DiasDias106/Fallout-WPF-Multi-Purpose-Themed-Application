@@ -1,0 +1,145 @@
+﻿<Application x:Class="Programacao2_final.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Programacao2_final"
+             xmlns:controller="clr-namespace:Programacao2_final.Controller"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <controller:Controlo x:Key="ctrl"></controller:Controlo>
+        <controller:Controlo1 x:Key="ctrl1"></controller:Controlo1>
+        <controller:Controlo2 x:Key="ctrl2"></controller:Controlo2>
+        <controller:Controlo3 x:Key="ctrl3"></controller:Controlo3>
+        <controller:Controlo4 x:Key="ctrl4"></controller:Controlo4>
+        <controller:Conversor x:Key="conversor"></controller:Conversor>
+        <controller:Conversor_jogo1 x:Key="conversor1"></controller:Conversor_jogo1>
+        <controller:Merc_conversor x:Key="conversor2"></controller:Merc_conversor>
+        <controller:Converter_atributo x:Key="conversor3"></controller:Converter_atributo>
+        <controller:Conversor_ppt x:Key="conversor4"></controller:Conversor_ppt>
+        <controller:Converter_jogo x:Key="conversor5"></controller:Converter_jogo>
+            <Style x:Key="btstyle" TargetType="Button">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <Ellipse Width="{TemplateBinding Width}" Height="{TemplateBinding Height}"
+                                 Name="bola" Stroke="LightGreen" StrokeThickness="8">
+                                    <Ellipse.Fill>
+                                        <RadialGradientBrush GradientOrigin="0.5,0.5">
+                                            <GradientStop Color="DarkGreen" Offset="0"></GradientStop>
+                                            <GradientStop Color="Green" Offset="0.5"></GradientStop>
+                                            <GradientStop Color="Green" Offset="0.8"></GradientStop>
+                                        </RadialGradientBrush>
+                                    </Ellipse.Fill>
+                                </Ellipse>
+                                <ContentPresenter VerticalAlignment="center" HorizontalAlignment="Center" ContentSource="Content"></ContentPresenter>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="true">
+                                    <Setter Property="Fill" TargetName="bola">
+                                        <Setter.Value>
+                                            <RadialGradientBrush GradientOrigin="0.5,0.5">
+                                                <GradientStop Color="DarkRed" Offset="0"></GradientStop>
+                                                <GradientStop Color="DarkRed" Offset="0.5"></GradientStop>
+                                                <GradientStop Color="Red" Offset="0.8"></GradientStop>
+                                            </RadialGradientBrush>
+                                        </Setter.Value>
+                                    </Setter>
+
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Fill" TargetName="bola" Value="red"></Setter>
+                                </Trigger>
+                                <Trigger Property="IsEnabled" Value="False">
+                                    <Setter Property="Fill" TargetName="bola" Value="black"></Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        <Style x:Key="btstyle2" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Ellipse Width="{TemplateBinding Width}" Height="{TemplateBinding Height}"
+                           Name="bola" Stroke="Brown" StrokeThickness="22">
+                                <Ellipse.Fill>
+                                    <RadialGradientBrush GradientOrigin="0.5,0.5">
+                                        <GradientStop Color="LightBlue" Offset="0"></GradientStop>
+                                        <GradientStop Color="Blue" Offset="0.5"></GradientStop>
+                                        <GradientStop Color="MidnightBlue" Offset="0.8"></GradientStop>
+                                    </RadialGradientBrush>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                            <ContentPresenter VerticalAlignment="center" HorizontalAlignment="Center" ContentSource="Content"></ContentPresenter>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Fill" TargetName="bola">
+                                    <Setter.Value>
+                                        <RadialGradientBrush GradientOrigin="0.5,0.5">
+                                            <GradientStop Color="Red" Offset="0"></GradientStop>
+                                            <GradientStop Color="Magenta" Offset="0.5"></GradientStop>
+                                            <GradientStop Color="Purple" Offset="0.8"></GradientStop>
+                                        </RadialGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Fill" TargetName="bola" Value="red"></Setter>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Fill" TargetName="bola" Value="black"></Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="calce" TargetType="Button">
+            <Setter Property="Background" Value="CadetBlue"></Setter>
+            <Setter Property="Foreground" Value="Yellow"></Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="Foreground" Value="Yellow"></Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="musica" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"></Setter>
+        <Setter Property="Foreground" Value="Black"></Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="Foreground" Value="Black"></Setter>
+                    <Setter Property="Background" Value="Transparent"></Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="pipbut" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"></Setter>
+            <Setter Property="BorderBrush" Value="DarkGreen"></Setter>
+            <Setter Property="Foreground" Value="DarkGreen"></Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="DarkGreen"></Setter>
+                    <Setter Property="Foreground" Value="LightGreen"></Setter>
+                    <Setter Property="BorderBrush" Value="DarkGreen"></Setter>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="Transparent"></Setter>
+                    <Setter Property="BorderBrush" Value="DarkGreen"></Setter>
+                    <Setter Property="Foreground" Value="DarkGreen"></Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="mnuit" TargetType="MenuItem">
+    <Style.Triggers>
+        <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="BorderBrush" Value="Black"></Setter>
+                        <Setter Property="BorderThickness" Value="0"></Setter>
+        </Trigger>
+    </Style.Triggers>
+</Style>
+    </Application.Resources>
+</Application>

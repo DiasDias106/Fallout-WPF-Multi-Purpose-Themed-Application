@@ -1,0 +1,48 @@
+﻿<Page x:Class="Programacao2_final.Inicio"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Programacao2_final"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="600"
+      Title="Inicio">
+
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="Navy" Offset="0"></GradientStop>
+                <GradientStop Color="LightBlue" Offset="0.5"></GradientStop>
+                <GradientStop Color="Cyan" Offset="0.8"></GradientStop>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="center" VerticalAlignment="center" Foreground="LightBlue" FontSize="50">
+            <Label.Effect>
+                <DropShadowEffect/>
+            </Label.Effect> Programação II
+        </Label>
+        <Image Source="/Imagens/icon_boy.png" Grid.Row="1" Margin="37,61,68,61"/>
+        <Image Source="/Imagens/icon_boy.png" Grid.Row="1" Margin="69,62,38,60" Grid.Column="2"/>
+        <Image Source="/Imagens/wpfbutton.png" Grid.ColumnSpan="1" Grid.Column="1" HorizontalAlignment="center" VerticalAlignment="Center" Grid.Row="3"/>
+        <Image Source="/Imagens/fallout.jpg"  Grid.Row="2" Grid.ColumnSpan="2" >
+            <Image.Effect>
+                <DropShadowEffect
+                    Color="CadetBlue"/>
+            </Image.Effect>
+        </Image>
+        <Label Grid.Row="2" FontSize="20" Foreground="Black" Grid.Column="1" HorizontalAlignment="Center" Margin="70 0 0 0" VerticalAlignment="Top" Grid.ColumnSpan="2">Francisco Dias</Label>
+        <Label Grid.Row="2" FontSize="20" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="70 0 0 0" Grid.ColumnSpan="2">Num:2023149</Label>
+        <Label Grid.Row="2" FontSize="20" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="70 0 0 0" Grid.ColumnSpan="2">Prof Jose Neves</Label>
+    </Grid>
+</Page>

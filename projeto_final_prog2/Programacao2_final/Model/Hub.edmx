@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Database1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="mercenarios">
+          <Key>
+            <PropertyRef Name="Idmerc" />
+          </Key>
+          <Property Name="Idmerc" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="rank" Type="nvarchar" MaxLength="50" />
+          <Property Name="nome" Type="nvarchar" MaxLength="50" />
+          <Property Name="pdia" Type="float" />
+          <Property Name="fotopath" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="nomes">
+          <Key>
+            <PropertyRef Name="nnome" />
+          </Key>
+          <Property Name="nnome" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__mercenario__nome__3B75D760">
+          <End Role="nomes" Type="Self.nomes" Multiplicity="0..1" />
+          <End Role="mercenarios" Type="Self.mercenarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="nomes">
+              <PropertyRef Name="nnome" />
+            </Principal>
+            <Dependent Role="mercenarios">
+              <PropertyRef Name="nome" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Database1ModelStoreContainer">
+          <EntitySet Name="mercenarios" EntityType="Self.mercenarios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="nomes" EntityType="Self.nomes" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__mercenario__nome__3B75D760" Association="Self.FK__mercenario__nome__3B75D760">
+            <End Role="nomes" EntitySet="nomes" />
+            <End Role="mercenarios" EntitySet="mercenarios" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Database1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="mercenarios">
+          <Key>
+            <PropertyRef Name="Idmerc" />
+          </Key>
+          <Property Name="Idmerc" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="rank" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pdia" Type="Double" />
+          <Property Name="fotopath" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="nomes" Relationship="Self.FK__mercenario__nome__3B75D760" FromRole="mercenarios" ToRole="nomes" />
+        </EntityType>
+        <EntityType Name="nomes">
+          <Key>
+            <PropertyRef Name="nnome" />
+          </Key>
+          <Property Name="nnome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="mercenarios" Relationship="Self.FK__mercenario__nome__3B75D760" FromRole="nomes" ToRole="mercenarios" />
+        </EntityType>
+        <Association Name="FK__mercenario__nome__3B75D760">
+          <End Role="nomes" Type="Self.nomes" Multiplicity="0..1" />
+          <End Role="mercenarios" Type="Self.mercenarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="nomes">
+              <PropertyRef Name="nnome" />
+            </Principal>
+            <Dependent Role="mercenarios">
+              <PropertyRef Name="nome" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Database1Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="mercenarios" EntityType="Self.mercenarios" />
+          <EntitySet Name="nomes" EntityType="Self.nomes" />
+          <AssociationSet Name="FK__mercenario__nome__3B75D760" Association="Self.FK__mercenario__nome__3B75D760">
+            <End Role="nomes" EntitySet="nomes" />
+            <End Role="mercenarios" EntitySet="mercenarios" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities">
+          <EntitySetMapping Name="mercenarios">
+            <EntityTypeMapping TypeName="Database1Model.mercenarios">
+              <MappingFragment StoreEntitySet="mercenarios">
+                <ScalarProperty Name="Idmerc" ColumnName="Idmerc" />
+                <ScalarProperty Name="rank" ColumnName="rank" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="pdia" ColumnName="pdia" />
+                <ScalarProperty Name="fotopath" ColumnName="fotopath" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="nomes">
+            <EntityTypeMapping TypeName="Database1Model.nomes">
+              <MappingFragment StoreEntitySet="nomes">
+                <ScalarProperty Name="nnome" ColumnName="nnome" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

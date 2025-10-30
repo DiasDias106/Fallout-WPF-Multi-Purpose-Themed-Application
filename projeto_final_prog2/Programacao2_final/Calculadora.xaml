@@ -1,0 +1,100 @@
+﻿<Page x:Class="Programacao2_final.Calculadora"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Programacao2_final"
+      mc:Ignorable="d" 
+      Background="White"
+      d:DesignHeight="600" d:DesignWidth="600"
+      Title="Calculadora">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Imagens/fundo_pipboy.png"></ImageBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <TextBox x:Name="txtmostra" Grid.Row="1" Grid.ColumnSpan="5" Grid.Column="2" Margin="0,40,0,0"/>
+        <TextBox x:Name="txtconta" Grid.Row="2" Grid.Column="2" BorderBrush="#FF0040FF" Grid.ColumnSpan="5" Margin="0,25,0,0"/>
+        <Button Style="{Binding Mode=OneWay, Source={StaticResource pipbut}}" CommandParameter="7" Margin="12,0,12,24" Grid.Column="2" Command="{Binding cmdnum, Source={StaticResource ctrl3}}" Grid.Row="4">
+            <TextBlock FontSize="20">7</TextBlock>
+        </Button>
+        <Button CommandParameter="8" Margin="10,0,14,24" Command="{Binding cmdnum, Source={StaticResource ctrl3}}" Style="{Binding Mode=OneWay, Source={StaticResource pipbut}}" Grid.Row="4" Grid.Column="3">
+            <TextBlock FontSize="20">8</TextBlock>
+        </Button>
+        <Button Style="{Binding Mode=OneWay, Source={StaticResource pipbut}}" CommandParameter="9" Margin="12,0,12,24" Grid.Column="4" Command="{Binding cmdnum, Source={StaticResource ctrl3}}" Grid.Row="4">
+            <TextBlock FontSize="20">9</TextBlock>
+        </Button>
+        <Button Style="{Binding Mode=OneWay, Source={StaticResource pipbut}}" CommandParameter="x" Margin="12,0,12,24" Grid.Column="6" Command="{Binding cmdopera, Source={StaticResource ctrl3}}" Grid.Row="4">
+            <TextBlock FontSize="20" FontWeight="Bold">x</TextBlock>
+        </Button>
+        <Button Style="{Binding Mode=OneWay, Source={StaticResource pipbut}}" CommandParameter="4" Margin="12,0,12,24" Grid.Column="2" Command="{Binding cmdnum, Source={StaticResource ctrl3}}" Grid.Row="5">
+            <TextBlock FontSize="20">4</TextBlock>
+        </Button>
+        <Button Style="{Binding Mode=OneWay, Source={StaticResource pipbut}}" CommandParameter="5" Margin="10,0,14,24" Grid.Column="3" Command="{Binding cmdnum, Source={StaticResource ctrl3}}" Grid.Row="5" >
+            <TextBlock FontSize="20">5</TextBlock>
+        </Button>
+        <Button Style="{Binding Mode=OneWay, Source={StaticResource pipbut}}" CommandParameter="6" Margin="12,0,12,24" Grid.Column="4" Command="{Binding cmdnum, Source={StaticResource ctrl3}}" Grid.Row="5">
+            <TextBlock FontSize="20">6</TextBlock>
+        </Button>
+        <Button Style="{Binding Mode=OneWay, Source={StaticResource pipbut}}" CommandParameter="-" Margin="12,2,12,22" Grid.Column="6" Command="{Binding cmdopera, Source={StaticResource ctrl3}}" Grid.Row="5">
+            <TextBlock FontSize="24" FontWeight="Bold">-</TextBlock>
+        </Button>
+        <Button Style="{Binding Mode=OneWay, Source={StaticResource pipbut}}" CommandParameter="1" Margin="10,0,14,24" Grid.Column="2" Command="{Binding cmdnum, Source={StaticResource ctrl3}}" Grid.Row="6">
+            <TextBlock FontSize="20">1</TextBlock>
+        </Button>
+        <Button Style="{Binding Mode=OneWay, Source={StaticResource pipbut}}" CommandParameter="2" Margin="12,0,12,24" Grid.Column="3" Command="{Binding cmdnum, Source={StaticResource ctrl3}}" Grid.Row="6">
+            <TextBlock FontSize="20">2</TextBlock>
+        </Button>
+        <Button Style="{Binding Mode=OneWay, Source={StaticResource pipbut}}" CommandParameter="3" Margin="14,0,10,24" Grid.Column="4" Command="{Binding cmdnum, Source={StaticResource ctrl3}}" Grid.Row="6">
+            <TextBlock FontSize="20">3</TextBlock>
+        </Button>
+        <Button Style="{Binding Mode=OneWay, Source={StaticResource pipbut}}" CommandParameter="+" Margin="12,0,12,24" Grid.Column="6" Command="{Binding cmdopera, Source={StaticResource ctrl3}}" Grid.Row="6">
+            <TextBlock FontSize="20">+</TextBlock>
+        </Button>
+        <Button Style="{Binding Mode=OneWay, Source={StaticResource pipbut}}" CommandParameter="/" Margin="12,0,12,24" Grid.Column="2" Command="{Binding cmdopera, Source={StaticResource ctrl3}}" Grid.Row="7" >
+            <TextBlock FontSize="20">/</TextBlock>
+        </Button>
+        <Button Style="{Binding Mode=OneWay, Source={StaticResource pipbut}}" CommandParameter="0" Margin="14,0,10,24" Grid.Column="3" Command="{Binding cmdnum, Source={StaticResource ctrl3}}" Grid.Row="7">
+            <TextBlock FontSize="20">0</TextBlock>
+        </Button>
+        <Button Style="{Binding Mode=OneWay, Source={StaticResource pipbut}}" CommandParameter="," Margin="12,0,12,24" Grid.Column="4" Command="{Binding cmdnum, Source={StaticResource ctrl3}}" Grid.Row="7">
+            <TextBlock FontSize="20">,</TextBlock>
+        </Button>
+        <Button Style="{Binding Mode=OneWay, Source={StaticResource pipbut}}"  Margin="12,0,12,24" Grid.Column="5" Command="{Binding cmdlimpar, Source={StaticResource ctrl3}}" Grid.Row="7">
+            <TextBlock FontSize="20">CA</TextBlock>
+        </Button>
+        <Button Style="{Binding Mode=OneWay, Source={StaticResource pipbut}}" CommandParameter="=" Margin="12,0,12,24" Grid.Column="6" Command="{Binding cmdopera, Source={StaticResource ctrl3}}" Grid.Row="7">
+            <TextBlock FontSize="20" FontWeight="Bold">=</TextBlock>
+        </Button>
+        <Button Style="{Binding Mode=OneWay, Source={StaticResource pipbut}}" CommandParameter="raiz" Margin="10,0,14,24" Grid.Column="5" Command="{Binding cmdnum, Source={StaticResource ctrl3}}" Grid.Row="4">
+            <TextBlock FontSize="20">√</TextBlock>
+        </Button>
+        <Button Style="{Binding Mode=OneWay, Source={StaticResource pipbut}}" CommandParameter="%" Margin="10,0,14,24" Grid.Column="5" Command="{Binding cmdopera, Source={StaticResource ctrl3}}" Grid.Row="5">
+            <TextBlock FontSize="20">%</TextBlock>
+        </Button>
+        <Button Style="{Binding Mode=OneWay, Source={StaticResource pipbut}}" CommandParameter="x2" Margin="12,0,12,24" Grid.Column="5" Command="{Binding cmdnum, Source={StaticResource ctrl3}}" Grid.Row="6">
+            <TextBlock FontSize="20">x²</TextBlock>
+        </Button>
+    </Grid>
+</Page>

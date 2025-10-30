@@ -1,0 +1,466 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{282F2B56-4644-4320-9356-6A911C119CB9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Programacao2_final</RootNamespace>
+    <AssemblyName>Programacao2_final</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Controller\ClsAtributos.cs" />
+    <Compile Include="Controller\ClsJogodados.cs" />
+    <Compile Include="Controller\ClsJogodascartas.cs" />
+    <Compile Include="Controller\ClsPPT.cs" />
+    <Compile Include="Controller\Conversor.cs" />
+    <Compile Include="Controller\Conversor_jogo1.cs" />
+    <Compile Include="Controller\Conversor_ppt.cs" />
+    <Compile Include="Controller\Converter_atributo.cs" />
+    <Compile Include="Controller\Clsgameshow.cs" />
+    <Compile Include="Controller\Converter_jogo.cs" />
+    <Compile Include="Controller\Merc_conversor.cs" />
+    <Compile Include="Jogodados.xaml.cs">
+      <DependentUpon>Jogodados.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Jogodascartas.xaml.cs">
+      <DependentUpon>Jogodascartas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="M2.xaml.cs">
+      <DependentUpon>M2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Mercenarios_Hub.xaml.cs">
+      <DependentUpon>Mercenarios_Hub.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Hub.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Hub.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Hub.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Hub.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Hub.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Hub.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\mercenarios.cs">
+      <DependentUpon>Hub.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MercenariosModel.cs" />
+    <Compile Include="Model\nomes.cs">
+      <DependentUpon>Hub.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PedraPapelTesoura.xaml.cs">
+      <DependentUpon>PedraPapelTesoura.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Regras1.xaml.cs">
+      <DependentUpon>Regras1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Regras2.xaml.cs">
+      <DependentUpon>Regras2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Regras3.xaml.cs">
+      <DependentUpon>Regras3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Regras4.xaml.cs">
+      <DependentUpon>Regras4.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Regras5.xaml.cs">
+      <DependentUpon>Regras5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Regras6.xaml.cs">
+      <DependentUpon>Regras6.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Regras7.xaml.cs">
+      <DependentUpon>Regras7.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Regras8.xaml.cs">
+      <DependentUpon>Regras8.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Regras9.xaml.cs">
+      <DependentUpon>Regras9.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Selos.xaml.cs">
+      <DependentUpon>Selos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Show_game.xaml.cs">
+      <DependentUpon>Show_game.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TesteAtributo.xaml.cs">
+      <DependentUpon>TesteAtributo.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Adivinha_num.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Calculadora.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dobro.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frases.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Inicio.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Jogodados.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Jogodascartas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="M2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Adivinha_num.xaml.cs">
+      <DependentUpon>Adivinha_num.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Calculadora.xaml.cs">
+      <DependentUpon>Calculadora.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\Cmd.cs" />
+    <Compile Include="Controller\Controlo.cs" />
+    <Compile Include="Controller\Controlo1.cs" />
+    <Compile Include="Controller\Controlo2.cs" />
+    <Compile Include="Controller\Controlo3.cs" />
+    <Compile Include="Controller\Controlo4.cs" />
+    <Compile Include="Dobro.xaml.cs">
+      <DependentUpon>Dobro.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frases.xaml.cs">
+      <DependentUpon>Frases.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Inicio.xaml.cs">
+      <DependentUpon>Inicio.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Mercenarios_Hub.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PedraPapelTesoura.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Regras1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Regras2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Regras3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Regras4.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Regras5.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Regras6.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Regras7.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Regras8.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Regras9.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Selos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Show_game.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TesteAtributo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EntityDeploy Include="Model\Hub.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Hub.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\Hub.edmx.diagram">
+      <DependentUpon>Hub.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagens\wpfbutton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagens\file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="View\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagens\vscode1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagens\pensar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagens\Binario.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagens\binario2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagens\fallout.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagens\FoS_bottle_cap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagens\musica_fundo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="PPT\0.png" />
+    <Resource Include="Imagens\icons8-fallout-shelter-64.png" />
+    <Resource Include="Imagens\icon_title.png" />
+    <Resource Include="Imagens\icon_boy.png" />
+    <Resource Include="Imagens\1.png" />
+    <Resource Include="Imagens\2.png" />
+    <Resource Include="Imagens\3.png" />
+    <Resource Include="Imagens\4.png" />
+    <Resource Include="Imagens\5.png" />
+    <Resource Include="Imagens\6.png" />
+    <Resource Include="Imagens\mec_background.jpg" />
+    <Resource Include="Imagens\R6.png" />
+    <Resource Include="Imagens\R7.png" />
+    <Resource Include="PPT\1.png" />
+    <Resource Include="PPT\2.png" />
+    <Resource Include="PPT\3.png" />
+    <Resource Include="Imagens\fallout9.jpg" />
+    <Resource Include="Game_images\1.png" />
+    <Resource Include="Game_images\2.png" />
+    <Resource Include="Game_images\3.png" />
+    <Resource Include="Game_images\5.png" />
+    <Resource Include="Game_images\6.png" />
+    <Resource Include="Game_images\7.png" />
+    <Resource Include="Game_images\4.png" />
+    <Resource Include="Game_images\0.png" />
+    <Resource Include="Game_images\8.png" />
+    <Resource Include="Imagens\R8.png" />
+    <Content Include="Sons_e_video\civilizacao.wav" />
+    <Content Include="Sons_e_video\o_explorador.wav" />
+    <Content Include="Sons_e_video\five_stars.wav" />
+    <Content Include="Sons_e_video\new_vegas.wav" />
+    <Content Include="Sons_e_video\completa.wav" />
+    <Content Include="Sons_e_video\carta_especial.wav" />
+    <Content Include="Sons_e_video\lua_azul.wav" />
+    <Content Include="Sons_e_video\rocket_69.wav" />
+    <Resource Include="Special\7.png" />
+    <Resource Include="Special\6.png" />
+    <Resource Include="Special\5.png" />
+    <Resource Include="Special\4.png" />
+    <Resource Include="Special\3.png" />
+    <Resource Include="Special\2.png" />
+    <Resource Include="Special\1.png" />
+    <Resource Include="Special\0.png" />
+    <Resource Include="Imagens\fundomusica.jpg" />
+    <Resource Include="Imagens\fundo_pipboy.png" />
+    <Resource Include="Imagens\fundo_adivinha.jpg" />
+    <Resource Include="Imagens\fundo_vt.jpg" />
+    <Resource Include="Imagens\pipcoy.png" />
+    <Resource Include="Imagens\bos.jpg" />
+    <Resource Include="Imagens\silverShroud.jpg" />
+    <Resource Include="Imagens\nuclear.jpg" />
+    <Resource Include="Imagens\casino-image.jpg" />
+    <Resource Include="Imagens\casino_1.jpg" />
+    <Resource Include="Cartas\2.png" />
+    <Resource Include="Cartas\4.png" />
+    <Resource Include="Cartas\5.png" />
+    <Resource Include="Cartas\6.png" />
+    <Resource Include="Cartas\7.png" />
+    <Resource Include="Cartas\8.png" />
+    <Resource Include="Cartas\9.png" />
+    <Resource Include="Cartas\10.png" />
+    <Resource Include="Cartas\11.png" />
+    <Resource Include="Cartas\12.png" />
+    <Resource Include="Cartas\13.png" />
+    <Resource Include="Cartas\0.png" />
+    <Resource Include="Cartas\1.png" />
+    <Resource Include="Cartas\3.png" />
+    <Resource Include="Cartas\14.png" />
+    <Resource Include="Imagens\Rules1.jpg" />
+    <Resource Include="Imagens\Regras2.png" />
+    <Resource Include="Imagens\R1.png" />
+    <Resource Include="Imagens\R2.png" />
+    <Resource Include="Imagens\R3.png" />
+    <Resource Include="Imagens\R4.png" />
+    <Resource Include="Imagens\R5.png" />
+    <Resource Include="Fotos\0.png" />
+    <Resource Include="Fotos\1.png" />
+    <Resource Include="Fotos\2.png" />
+    <Resource Include="Fotos\4.png" />
+    <Resource Include="Fotos\nofoto.png" />
+    <Resource Include="Imagens\Fundo_atridutos.jpg" />
+    <Content Include="Model\Hub.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Hub.Context.cs</LastGenOutput>
+      <DependentUpon>Hub.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model\Hub.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Hub.edmx</DependentUpon>
+      <LastGenOutput>Hub.cs</LastGenOutput>
+    </Content>
+    <Content Include="Sons_e_video\nuclear_explosion.wav" />
+    <Content Include="Sons_e_video\coletar.wav" />
+    <Content Include="Sons_e_video\chuva_dinheiro.wav" />
+    <Content Include="Sons_e_video\falha.wav" />
+    <Content Include="Sons_e_video\vitoria.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,97 @@
+﻿<Page x:Class="Programacao2_final.Mercenarios_Hub"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Programacao2_final"
+      mc:Ignorable="d" 
+      Background="CadetBlue"
+      d:DesignHeight="600" d:DesignWidth="600"
+      Title="Mercenarios_Hub">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Imagens/mec_background.jpg" ></ImageBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="569*"/>
+            <ColumnDefinition Width="231*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Lista de Mercenarios" FontSize="22" Foreground="White" Grid.Row="0" Grid.ColumnSpan="2" TextAlignment="Center" >
+            <TextBlock.Effect>
+                <DropShadowEffect/>
+            </TextBlock.Effect>
+        </TextBlock>
+        <StackPanel Background="Transparent" Grid.Row="1" Grid.Column="0" Margin="8">
+            <ListView
+   
+        IsSynchronizedWithCurrentItem="True" 
+         ItemsSource="{Binding mercenariosmodel.ViewMerc, Source={StaticResource ctrl4}}" 
+        
+        >
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn 
+                    Header="Idmerc" 
+                    DisplayMemberBinding="{Binding Idmerc}">
+
+                        </GridViewColumn>
+                        <GridViewColumn 
+                     Header="rank" 
+                      DisplayMemberBinding="{Binding rank}">
+
+                        </GridViewColumn>
+                        <GridViewColumn 
+                     Header="nome" 
+                        DisplayMemberBinding="{Binding nome}">
+
+                        </GridViewColumn>
+
+                        <GridViewColumn 
+                     Header="pdia" 
+                    DisplayMemberBinding="{Binding pdia}">
+
+                        </GridViewColumn>
+                    </GridView>
+
+                </ListView.View>
+            </ListView>
+        </StackPanel>
+        <Image 
+         x:Name="foto"
+    Grid.Row="1" Grid.Column="1" Margin="8" Source="{Binding mercenariosmodel.MercenariosCorrente.fotopath, Converter={StaticResource conversor2}, Source={StaticResource ctrl4}}"  ></Image>
+        <StackPanel Grid.Row="2" Grid.Column="0" Margin="9" Background="Transparent">
+            <Label>idmerc</Label>
+            <TextBox Margin="5" IsReadOnly="True" Text="{Binding mercenariosmodel.MercenariosCorrente.Idmerc, Source={StaticResource ctrl4}}"
+           ></TextBox>
+            <Label>rank</Label>
+            <TextBox Margin="5"
+Text="{Binding mercenariosmodel.MercenariosCorrente.rank, Source={StaticResource ctrl4}}"></TextBox>
+            <Label>nome</Label>
+            <ComboBox
+            Margin="8 0"
+            x:Name="selmarca" 
+            ItemsSource="{Binding mercenariosmodel.ListaMerc,
+            Mode=TwoWay,
+            Source={StaticResource ctrl4}}"
+            SelectedValuePath="nome" 
+            DisplayMemberPath="nome"
+            SelectedValue="{Binding mercenariosmodel.MercenariosCorrente.nome, Source={StaticResource ctrl4}}"
+              />
+            <Label>pdia</Label>
+            <TextBox Margin="5"
+Text="{Binding mercenariosmodel.MercenariosCorrente.pdia, Source={StaticResource ctrl4}}"></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="1" Background="Transparent" Margin="8">
+            <Button Content="gravar"  Margin="5" Command="{Binding cmdgravarmerc, Source={StaticResource ctrl4}}" ></Button>
+            <Button Content="incerir" Margin="5" Command="{Binding cmdincerirmerc, Source={StaticResource ctrl4}}"></Button>
+            <Button Content="Apagar" Margin="5" Command="{Binding cmdapagarmerc, Source={StaticResource ctrl4}}" ></Button>
+            <Button Content="Foto" Margin="5" CommandParameter="{Binding ElementName=foto, Mode=OneWay}" Command="{Binding cmdgetfoto, Source={StaticResource ctrl4}}" ></Button>
+        </StackPanel>
+    </Grid>
+</Page>

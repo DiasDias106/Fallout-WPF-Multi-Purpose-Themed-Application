@@ -1,0 +1,40 @@
+﻿<Page x:Class="Programacao2_final.M2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Programacao2_final"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="600"
+      Title="M2">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="50*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="50*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Imagens/fundomusica.jpg"/>
+        </Grid.Background>
+        <Button Background="Gray" Grid.Row="1" FontSize="20" BorderBrush="Black" BorderThickness="3" Content="Musica 1" Command="{Binding cmdmusica2, Source={StaticResource ctrl4}}" Style="{Binding Mode=OneWay, Source={StaticResource musica}}" Grid.Column="1" Margin="30,39,30,10" />
+        <Button Background="Gray" FontSize="20" BorderBrush="Black" BorderThickness="3" Content="Parar"  Style="{Binding Mode=OneWay, Source={StaticResource musica}}" Command="{Binding cmdparar, Source={StaticResource ctrl4}}" Grid.Column="1" Margin="150,22,150,30" Grid.Row="5" Grid.ColumnSpan="2"/>
+        <Button Background="Gray" Grid.Row="2" FontSize="20" BorderBrush="Black" BorderThickness="3" Content="Musica 3" Command="{Binding cmdmusica3, Source={StaticResource ctrl4}}" Style="{Binding Mode=OneWay, Source={StaticResource musica}}" Grid.Column="1" Margin="30,38,30,10" />
+        <Button Background="Gray" Grid.Row="1" FontSize="20" BorderBrush="Black" BorderThickness="3" Content="Musica 2" Command="{Binding cmdmusica1, Source={StaticResource ctrl4}}" Style="{Binding Mode=OneWay, Source={StaticResource musica}}" Grid.Column="2" Margin="30,39,30,10" />
+        <Button Background="Gray" Grid.Row="2" FontSize="20" BorderBrush="Black" BorderThickness="3" Content="Musica 4" Command="{Binding cmdmusica4, Source={StaticResource ctrl4}}" Style="{Binding Mode=OneWay, Source={StaticResource musica}}" Grid.Column="2" Margin="30,38,30,10" />
+        <Button Background="Gray" Grid.Row="3" FontSize="20" BorderBrush="Black" BorderThickness="3" Content="Musica 6" Command="{Binding cmdmusica7, Source={StaticResource ctrl4}}" Style="{Binding Mode=OneWay, Source={StaticResource musica}}" Grid.Column="2" Margin="30,30,30,18" />
+        <Button Background="Gray" Grid.Row="3" FontSize="20" BorderBrush="Black" BorderThickness="3" Content="Musica 5" Command="{Binding cmdmusica5, Source={StaticResource ctrl4}}" Style="{Binding Mode=OneWay, Source={StaticResource musica}}" Grid.Column="1" Margin="30,30,30,18" />
+        <Button Background="Gray" Grid.Row="4" FontSize="20" BorderBrush="Black" BorderThickness="3" Content="Random" Command="{Binding cmdmusica6, Source={StaticResource ctrl4}}" Style="{Binding Mode=OneWay, Source={StaticResource musica}}" Grid.Column="1" Margin="150,39,150,10" Grid.ColumnSpan="2" />
+
+    </Grid>
+</Page>

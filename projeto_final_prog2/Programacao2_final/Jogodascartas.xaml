@@ -1,0 +1,50 @@
+﻿<Page x:Class="Programacao2_final.Jogodascartas"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Programacao2_final"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="600"
+      Title="Jogodascartas">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="200*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="200*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="50*"/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Imagens/casino_1.jpg" />
+        </Grid.Background>
+        <Image  Grid.Row="2" Grid.Column="1" Source="{Binding myjogo1.Carta1, Converter={StaticResource conversor1}, Source={StaticResource ctrl4}}"  ></Image>
+        <TextBox x:Name="txtmontante" BorderBrush="Black" BorderThickness="5" Text="{Binding myjogo1.Montante, Source={StaticResource ctrl4}}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Margin="36,52,28,10"  ></TextBox>
+        <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Foreground="White" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Label.Effect>
+                <DropShadowEffect/>
+            </Label.Effect> Montante
+        </Label>
+        <TextBox BorderBrush="Black" BorderThickness="5" FontSize="12" x:Name="txtaposta" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Margin="36,52,28,10"  ></TextBox>
+        <Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Foreground="White" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Label.Effect>
+                <DropShadowEffect/>
+            </Label.Effect> Aposta
+        </Label>
+        <TextBox BorderBrush="black" BorderThickness="6" FontSize="12" x:Name="txtresultado" Grid.Row="3" Grid.RowSpan="2" Grid.Column="2" Margin="18,47,18,10" ></TextBox>
+        <Button BorderBrush="Black" BorderThickness="5" FontSize="25" Grid.Row="2" Grid.Column="0" Margin="36,76,36,76" CommandParameter="{Binding Text, ElementName=txtaposta}" Command="{Binding cmdAdivinhar, Source={StaticResource ctrl4}}" >virar</Button>
+        <TextBox BorderBrush="Black" BorderThickness="5" FontSize="12" x:Name="txtdito" Grid.Row="2" Grid.Column="2" Margin="31,76,18,76" ></TextBox>
+        <Label  Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Foreground="White">
+            <Label.Effect>
+                <DropShadowEffect/>
+            </Label.Effect> Digite numero
+        </Label>
+    </Grid>
+</Page>

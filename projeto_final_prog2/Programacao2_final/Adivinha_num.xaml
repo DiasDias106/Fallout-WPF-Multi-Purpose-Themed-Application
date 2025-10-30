@@ -1,0 +1,43 @@
+﻿<Page x:Class="Programacao2_final.Adivinha_num"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Programacao2_final"
+      xmlns:ctrl="clr-namespace:Programacao2_final.Controller"
+      mc:Ignorable="d" 
+      Background="white"
+      d:DesignHeight="600" d:DesignWidth="600"
+      Title="Adivinha_num">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Imagens/silverShroud.jpg"  ></ImageBrush>
+        </Grid.Background>
+        <Image Grid.Row="1" Grid.Column="0" Source="/Imagens/FoS_bottle_cap.png" ></Image>
+        <Image Source="/imagens/pensar.jpg" Grid.RowSpan="2" Grid.Row="2" Margin="0,21,0,0" ></Image>
+        <Label Content="Adivinhe um numero entre 1 e 50" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalContentAlignment="Center" FontSize="21" FontWeight="ExtraBold" Foreground="YellowGreen" Margin="18,0,25,0"></Label>
+        <Label  Content="coloque aqui o numero" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="YellowGreen" FontWeight="ExtraBold" FontSize="20" ></Label>
+        <TextBox x:Name="txtmostra" FontSize="30" Grid.Row="2" Grid.Column="1" Text="{Binding Path= Value, ElementName=slider}" Margin="25,70,25,59"/>
+        <Label Content="Resultado" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="YellowGreen" FontWeight="ExtraBold" FontSize="20"></Label>
+        <TextBox x:Name="txtresult" FontSize="18" Grid.Row="3" Grid.Column="1" Margin="25,10,25,119"></TextBox>
+        <Slider Margin="18,132,25,10" Minimum="1" Maximum="50" Foreground="Magenta" IsSnapToTickEnabled="True"
+        TickFrequency="1"
+        TickPlacement="BottomRight"
+        Grid.Row="3"
+        Grid.Column="1"
+        x:Name="slider" />
+        <Button Grid.Column="1" Grid.Row="4"  Background="LightBlue" FontSize="20"   CommandParameter="{Binding Text, ElementName=txtmostra}" Command="{Binding cmdadivinha, Source={StaticResource ctrl2}}" Margin="70,0,76,50" >Verificar</Button>
+        <Button  Grid.Row="4" FontSize="20" Background="LightBlue" Command="{Binding cmdlimpar, Source={StaticResource ctrl2}}" Margin="27,4,27,50">Limpar</Button>
+    </Grid>
+</Page>

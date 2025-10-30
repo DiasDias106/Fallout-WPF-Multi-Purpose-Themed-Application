@@ -1,0 +1,58 @@
+﻿<Window x:Class="Programacao2_final.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Programacao2_final"
+        mc:Ignorable="d"
+        Background="White"
+        Title="MainWindow" Height="600" Width="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="500*"/>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0">
+            <Menu DockPanel.Dock="Top" Background="White">
+                <MenuItem FontSize="20" Header="Inicio" Foreground="black" Background="White">
+                    <MenuItem FontSize="20" Background="White" CommandParameter="inicio" Header="Inicio" Foreground="black" Command="{Binding cmdnavegar, Source={StaticResource ctrl}}" ></MenuItem>
+                </MenuItem>
+                <MenuItem FontSize="20" Background="White"  Foreground="black" Header="Sair" Command="{Binding cmdsair, Source={StaticResource ctrl}}"></MenuItem>
+                <MenuItem FontSize="20" Background="White" Foreground="black" Header="Calculadora">
+                    <MenuItem FontSize="20" Background="White" Foreground="black" Header="Calculadora" CommandParameter="calculadora" Command="{Binding cmdnavegar, Source={StaticResource ctrl}}"></MenuItem>
+                    </MenuItem>
+                <MenuItem FontSize="20" Foreground="black" Header="Jogos">
+                    <MenuItem FontSize="20" CommandParameter="Selos"  Background="White" Foreground="Black" Header="Jogo dos Selos" Command="{Binding cmdnavegar, Source={StaticResource ctrl}}"></MenuItem>
+                    <MenuItem FontSize="20" Background="White" Foreground="black" CommandParameter="jogodados" Header="Jogo dos Dados" Command="{Binding cmdnavegar, Source={StaticResource ctrl}}"></MenuItem>
+                    <MenuItem FontSize="20" Background="White" Foreground="black" CommandParameter="adivinha"  Header="Jogo Adivinha Numero" Command="{Binding cmdnavegar, Source={StaticResource ctrl}}"></MenuItem>
+                    <MenuItem FontSize="20" Background="White" Foreground="black" Header="Formulador de Frases" CommandParameter="frase" Command="{Binding cmdnavegar, Source={StaticResource ctrl}}" ></MenuItem>
+                    <MenuItem FontSize="20" Background="White" Foreground="black" CommandParameter="Dobro"  Header="Dobro Numero" Command="{Binding cmdnavegar, Source={StaticResource ctrl}}"></MenuItem>
+                    <MenuItem FontSize="20" Background="White" Foreground="black" CommandParameter="card" Header="Jogo das cartas" Command="{Binding cmdnavegar, Source={StaticResource ctrl}}" ></MenuItem>
+                    <MenuItem FontSize="20" Background="White" Foreground="black" CommandParameter="Sp"  Header="Simulador de Atributo" Command="{Binding cmdnavegar, Source={StaticResource ctrl}}"></MenuItem>
+                    <MenuItem FontSize="20" Background="White" Foreground="black" CommandParameter="ppt" Header="Pedra , papel ou tesoura" Command="{Binding cmdnavegar, Source={StaticResource ctrl}}" ></MenuItem>
+                    <MenuItem FontSize="20" Background="White" Foreground="black" CommandParameter="GS" Header="Game show" Command="{Binding cmdnavegar, Source={StaticResource ctrl}}" ></MenuItem>
+                </MenuItem>
+                <MenuItem FontSize="20" Background="White" Foreground="black" Header="Regras" >
+                    <MenuItem FontSize="20" Background="White" CommandParameter="r1"  Foreground="Black" Header="Regras " Command="{Binding cmdnavegar, Source={StaticResource ctrl}}"></MenuItem>
+                    <MenuItem FontSize="20" Background="White" Foreground="black" CommandParameter="r2" Header="Regras Gerais" Command="{Binding cmdnavegar, Source={StaticResource ctrl}}"></MenuItem>
+                    <MenuItem FontSize="20" Background="White" Foreground="black" CommandParameter="r3" Header="Regras Jogo dos dados" Command="{Binding cmdnavegar, Source={StaticResource ctrl}}"></MenuItem>
+                    <MenuItem FontSize="20" Background="White" Foreground="black" CommandParameter="r4" Header="Regras Jogo das cartas" Command="{Binding cmdnavegar, Source={StaticResource ctrl}}"></MenuItem>
+                    <MenuItem FontSize="20" Background="White" Foreground="black" CommandParameter="r5" Header="Regras Adivinha o numero" Command="{Binding cmdnavegar, Source={StaticResource ctrl}}"></MenuItem>
+                    <MenuItem FontSize="20" Background="White" Foreground="black" CommandParameter="r6" Header="Regras Selos e Contratos" Command="{Binding cmdnavegar, Source={StaticResource ctrl}}"></MenuItem>
+                    <MenuItem FontSize="20" Background="White" Foreground="black" CommandParameter="r7" Header="Jogo do Atributo" Command="{Binding cmdnavegar, Source={StaticResource ctrl}}"></MenuItem>
+                    <MenuItem FontSize="20" Background="White" Foreground="black" CommandParameter="r8" Header="Pedra, Papel ou Tesoura" Command="{Binding cmdnavegar, Source={StaticResource ctrl}}"></MenuItem>
+                    <MenuItem FontSize="20" Background="White" Foreground="black" CommandParameter="r9" Header="Game Show" Command="{Binding cmdnavegar, Source={StaticResource ctrl}}"></MenuItem>
+                </MenuItem>
+                <MenuItem FontSize="20" Background="White" Foreground="black" Header="Musicas">
+                    <MenuItem Background="White" CommandParameter="musc2" FontSize="20" Foreground="Black" Header="Musicas" Command="{Binding cmdnavegar, Source={StaticResource ctrl}}" ></MenuItem>
+                </MenuItem>
+                <MenuItem FontSize="20" Background="White" Foreground="black" Header="Contratos">
+                    <MenuItem  Background="White" CommandParameter="ct1" FontSize="20" Foreground="Black" Header="Contratar mercenarios" Command="{Binding cmdnavegar, Source={StaticResource ctrl}}" ></MenuItem>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+        <Frame 
+     Source="Inicio.xaml"
+     Grid.Row="1" x:Name="frame"></Frame>
+    </Grid>
+</Window>
